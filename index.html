@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yahya Global Travel and Tours | Umrah, Tickets, Visas | Sialkot</title>
+<meta name="description" content="Yahya Global Travel and Tours (Private) Limited, Sialkot. Airline tickets, Umrah packages, visit visas, Pakistan tours and international holidays. Call or WhatsApp 0348 7216560.">
+<link rel="icon" type="image/png" href="img/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-950:#041d1f;
+    --teal-900:#062b2e;
+    --teal-800:#0a3b3f;
+    --teal-700:#0d4f54;
+    --teal-500:#138a8f;
+    --teal-300:#2ec4c9;
+    --orange:#f26a21;
+    --orange-dk:#d9530d;
+    --gold:#e8b86a;
+    --gold-lt:#f5d9a4;
+    --amber:#ffcf73;
+    --paper:#f6f1e6;
+    --ticket:#fffdf8;
+    --ink:#10262a;
+    --muted:#5b6f72;
+    --line:#e2dccd;
+    --radius:18px;
+    --wrap:1180px;
+    --mono:'Space Mono',ui-monospace,monospace;
+    --script:'Great Vibes',cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Montserrat',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+  section{padding:100px 0;position:relative}
+
+  /* Airport wayfinding sign used as section label */
+  .sign{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--teal-900);font:700 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;padding:6px 12px 6px 6px;border-radius:6px;box-shadow:0 6px 16px -8px rgba(0,0,0,.4)}
+  .sign b{background:var(--teal-900);color:var(--gold);padding:3px 8px;border-radius:4px;letter-spacing:.08em}
+  .sign::after{content:"\2192";font-size:1rem;line-height:1}
+  h2.title{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.12;font-weight:900;color:var(--teal-800);margin:18px 0 14px;letter-spacing:-.01em}
+  .lead{color:var(--muted);max-width:600px;font-size:1.02rem}
+  .script{font-family:var(--script);font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--gold);line-height:1.1}
+  .head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-weight:700;font-size:.95rem;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;font-family:inherit}
+  .btn:hover{transform:translateY(-2px)}
+  .btn svg{width:20px;height:20px;flex:none}
+  .btn-orange{background:var(--orange);color:#fff;box-shadow:0 10px 24px -8px rgba(242,106,33,.6)}
+  .btn-orange:hover{background:var(--orange-dk)}
+  .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
+  .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .btn-ink{background:var(--teal-800);color:#fff}
+  .btn-ink:hover{background:var(--teal-700)}
+  .btn-wa{background:#25d366;color:#fff}
+
+  /* Barcode strip, reused on tickets */
+  .barcode{display:block;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 7px,var(--ink) 7px 10px,transparent 10px 11px,var(--ink) 11px 12px,transparent 12px 15px);opacity:.85}
+
+  /* NAV */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
+  header.solid{background:rgba(4,29,31,.95);backdrop-filter:blur(8px);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand img{width:54px;height:auto}
+  .brand b{display:block;font-size:1.25rem;font-weight:900;letter-spacing:.06em;line-height:1}
+  .brand small{display:block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);margin-top:4px}
+  .links{display:flex;gap:26px;align-items:center}
+  .links a{color:rgba(255,255,255,.85);font-weight:600;font-size:.88rem}
+  .links a:hover{color:var(--gold)}
+  .links .btn{padding:10px 20px;color:#fff}
+  .burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:8px}
+  .burger svg{width:28px;height:28px}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;color:#fff;padding:130px 0 90px;overflow:hidden;
+    background:
+      radial-gradient(circle at 1px 1px,rgba(46,196,201,.16) 1px,transparent 1.5px) 0 0/22px 22px,
+      radial-gradient(ellipse at 80% 20%,rgba(19,138,143,.35),transparent 55%),
+      radial-gradient(ellipse at 10% 90%,rgba(242,106,33,.12),transparent 50%),
+      var(--teal-950)}
+  .hero .route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.02fr;gap:56px;align-items:center}
+  .hero .script{margin:22px 0 2px}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,4.1rem);line-height:1.02;font-weight:900;letter-spacing:-.015em}
+  .hero h1 span{display:block;background:linear-gradient(180deg,var(--gold-lt),var(--gold) 60%,#c58f3e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .tag{font:700 .8rem var(--mono);letter-spacing:.24em;text-transform:uppercase;color:var(--teal-300);margin:14px 0 20px}
+  .hero p.sub{max-width:520px;color:rgba(255,255,255,.8);font-size:1.03rem;margin-bottom:32px}
+  .hero .ctas{display:flex;flex-wrap:wrap;gap:14px}
+
+  /* Departures board */
+  .board{background:#081315;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:22px 22px 16px;box-shadow:0 50px 90px -40px rgba(0,0,0,.85),inset 0 1px 0 rgba(255,255,255,.06);position:relative}
+  .board::before{content:"";position:absolute;inset:-1px;border-radius:20px;padding:1px;background:linear-gradient(140deg,rgba(232,184,106,.5),transparent 40%,transparent 70%,rgba(46,196,201,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+  .board-head{display:flex;justify-content:space-between;align-items:center;font:700 .95rem var(--mono);color:var(--amber);letter-spacing:.22em;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .board-head .clock{color:#9fd9dc;letter-spacing:.12em;font-size:.85rem}
+  .bcols,.brow{display:grid;grid-template-columns:64px 204px 1fr 74px;gap:12px;align-items:center}
+  .bcols{font:700 .62rem var(--mono);color:rgba(255,255,255,.4);letter-spacing:.18em;text-transform:uppercase;padding:12px 8px 6px}
+  .brow{padding:9px 8px;border-radius:10px;font-size:15px;transition:background .2s}
+  .brow + .brow{border-top:1px dashed rgba(255,255,255,.06)}
+  .brow:hover{background:rgba(255,255,255,.05)}
+  .flaps{display:flex;gap:2px}
+  .f{display:inline-grid;place-items:center;width:1.12em;height:1.6em;background:linear-gradient(180deg,#1f3538 0 50%,#16292c 50%);border-radius:3px;color:var(--amber);font:700 1em/1 var(--mono);position:relative;box-shadow:inset 0 -1px 0 rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.04)}
+  .f::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:rgba(0,0,0,.6)}
+  .f.flip{animation:flip .09s linear}
+  @keyframes flip{50%{transform:rotateX(85deg)}}
+  .code .f{color:#fff}
+  .bpkg{font:700 .7rem var(--mono);color:#9fd9dc;letter-spacing:.1em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bst{font:700 .68rem var(--mono);color:#62e28f;display:flex;align-items:center;gap:6px;letter-spacing:.08em}
+  .bst i{width:7px;height:7px;border-radius:50%;background:#62e28f;box-shadow:0 0 8px #62e28f;animation:blink 1.4s infinite}
+  @keyframes blink{50%{opacity:.25}}
+  .board-foot{display:flex;justify-content:space-between;gap:10px;margin-top:10px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08);font:400 .72rem var(--mono);color:rgba(255,255,255,.5);letter-spacing:.06em}
+
+  /* Ticker */
+  .ticker{overflow:hidden;background:var(--gold);color:var(--teal-900);font:700 .82rem var(--mono);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;padding:14px 0;position:relative;z-index:3}
+  .ticker.dark{background:var(--teal-900);color:var(--gold-lt)}
+  .ticker-track{display:inline-flex;gap:38px;padding-right:38px;animation:tick 38s linear infinite}
+  .ticker-track span{display:inline-flex;align-items:center;gap:38px}
+  .ticker-track span::after{content:"\2708";font-size:1rem}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* SERVICES as boarding-pass tickets */
+  .tickets{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .tk{filter:drop-shadow(0 14px 22px rgba(10,59,63,.13));transition:transform .3s}
+  .tk:hover{transform:translateY(-6px) rotate(-.5deg)}
+  .tk-in{display:grid;grid-template-columns:1fr 84px;background:var(--ticket);border-radius:18px;height:100%;
+    --cut:calc(100% - 84px);
+    -webkit-mask:radial-gradient(circle 12px at var(--cut) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 12px at var(--cut) 100%,#0000 98%,#000) bottom/100% 51% no-repeat;
+    mask:radial-gradient(circle 12px at var(--cut) 0,#0000 98%,#000) top/100% 51% no-repeat,radial-gradient(circle 12px at var(--cut) 100%,#0000 98%,#000) bottom/100% 51% no-repeat}
+  .tk-main{padding:26px 22px 24px 26px}
+  .tk-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+  .ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--teal-700),var(--teal-500));color:#fff}
+  .ico svg{width:26px;height:26px}
+  .tk:nth-child(even) .ico{background:linear-gradient(135deg,var(--orange-dk),var(--orange))}
+  .tk-code{font:700 .68rem var(--mono);color:var(--muted);letter-spacing:.14em;text-align:right;line-height:1.5}
+  .tk-code b{display:block;color:var(--teal-700);font-size:.9rem}
+  .tk h3{font-size:1.14rem;font-weight:800;color:var(--teal-800);margin-bottom:6px}
+  .tk p{color:var(--muted);font-size:.9rem}
+  .tk-stub{border-left:2px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:linear-gradient(180deg,#fbf6ea,#f2ebda);font-family:var(--mono)}
+  .tk-stub small{font-size:.58rem;letter-spacing:.2em;color:var(--muted)}
+  .tk-stub b{font-size:1.6rem;color:var(--teal-800);line-height:1}
+  .tk:nth-child(even) .tk-stub b{color:var(--orange-dk)}
+  .tk-stub .barcode{width:44px;height:46px;margin-top:10px;background:repeating-linear-gradient(0deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 7px,var(--ink) 7px 10px,transparent 10px 11px,var(--ink) 11px 12px,transparent 12px 15px)}
+
+  /* UMRAH */
+  .umrah{background:
+      radial-gradient(circle at 1px 1px,rgba(232,184,106,.12) 1px,transparent 1.5px) 0 0/24px 24px,
+      var(--teal-800);color:#fff}
+  .umrah-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .umrah .title{color:#fff}
+  .umrah .lead{color:rgba(255,255,255,.75)}
+  .umrah ul.checks{list-style:none;margin:26px 0 34px;display:grid;gap:14px}
+  .checks li{display:flex;gap:12px;align-items:flex-start}
+  .checks li svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+  .umrah-pics{position:relative;height:520px}
+  .umrah-pics .p1{position:absolute;width:62%;height:78%;left:0;top:0;border-radius:22px;object-fit:cover;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+  .umrah-pics .p2{position:absolute;width:52%;height:62%;right:0;bottom:0;background:#fff;padding:10px 10px 0;border-radius:6px;transform:rotate(4deg);display:flex;flex-direction:column;box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+  .umrah-pics .p2 img{flex:1;min-height:0;width:100%;object-fit:cover;border-radius:2px}
+  .umrah-pics figcaption{font-family:var(--script);font-size:1.5rem;color:var(--teal-800);text-align:center;padding:6px 0 8px;line-height:1.2}
+
+  /* Passport stamp */
+  .stamp{position:absolute;z-index:3;width:92px;height:92px;border-radius:50%;border:2.5px solid currentColor;display:grid;place-items:center;text-align:center;font:700 .56rem/1.25 var(--mono);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-14deg);color:#fff;background:rgba(4,29,31,.28);backdrop-filter:blur(2px)}
+  .stamp::before{content:"";position:absolute;inset:5px;border-radius:50%;border:1px dashed currentColor}
+  .stamp b{display:block;font-size:.86rem;letter-spacing:.06em;margin:2px 0}
+  .umrah-pics .stamp{left:48%;top:4%;color:var(--gold);background:rgba(10,59,63,.6);width:108px;height:108px}
+
+  /* Umrah boarding passes */
+  .pkg-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin:90px 0 30px}
+  .pkg-head h3{font-size:1.7rem;font-weight:900}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips span{border:1px dashed rgba(232,184,106,.6);color:var(--gold-lt);padding:6px 14px;border-radius:6px;font:700 .74rem var(--mono);letter-spacing:.08em}
+  .passes{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+  .bp{background:var(--ticket);color:var(--ink);border-radius:18px;position:relative;display:flex;flex-direction:column;box-shadow:0 30px 50px -25px rgba(0,0,0,.6);transition:transform .3s}
+  .bp:hover{transform:translateY(-6px)}
+  .bp.featured{transform:translateY(-14px)}
+  .bp.featured:hover{transform:translateY(-20px)}
+  .bp-head{display:flex;justify-content:space-between;background:var(--teal-700);color:#fff;padding:14px 22px;border-radius:18px 18px 0 0;font:700 .7rem var(--mono);letter-spacing:.2em}
+  .featured .bp-head{background:var(--orange)}
+  .bp-route{display:flex;align-items:center;justify-content:space-between;padding:22px 22px 8px}
+  .bp-route div b{display:block;font:700 2rem/1 var(--mono);color:var(--teal-800)}
+  .bp-route div small{font-size:.7rem;color:var(--muted);font-weight:600}
+  .bp-route div:last-child{text-align:right}
+  .bp-route .line{flex:1;margin:0 12px;height:2px;background:repeating-linear-gradient(90deg,var(--teal-500) 0 6px,transparent 6px 11px);position:relative}
+  .bp-route .line svg{position:absolute;left:50%;top:50%;width:24px;height:24px;transform:translate(-50%,-50%) rotate(45deg);color:var(--orange);background:var(--ticket);padding:2px}
+  .bp h4{font-size:1.3rem;font-weight:900;color:var(--teal-800);padding:4px 22px 0}
+  .bp-fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 22px 0}
+  .bp-fields small{display:block;font:700 .56rem var(--mono);letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
+  .bp-fields b{font-size:.82rem;font-weight:700;color:var(--ink);line-height:1.3;display:block}
+  .bp-cut{position:relative;height:0;border-top:2px dashed var(--line);margin:20px 0 16px}
+  .bp-cut::before,.bp-cut::after{content:"";position:absolute;top:-13px;width:24px;height:24px;border-radius:50%;background:var(--teal-800)}
+  .bp-cut::before{left:-12px}.bp-cut::after{right:-12px}
+  .bp ul{list-style:none;display:grid;gap:9px;padding:0 22px}
+  .bp li{display:flex;gap:10px;font-size:.88rem;color:#2f4548}
+  .bp li svg{width:18px;height:18px;color:var(--teal-500);flex:none;margin-top:2px}
+  .bp-foot{display:flex;align-items:center;gap:14px;padding:20px 22px 22px}
+  .bp-foot .barcode{flex:1;height:44px}
+  .bp-foot .btn{padding:12px 18px;font-size:.85rem}
+
+  /* EXPLORE PAKISTAN */
+  .pakistan{background:linear-gradient(180deg,#eaf3ea,var(--paper))}
+  .pakistan .sign{background:#1f8a4c;color:#fff}
+  .pakistan .sign b{background:#fff;color:#1f8a4c}
+  .pk-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:280px;gap:18px}
+  .pk{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--teal-800);cursor:pointer}
+  .pk.big{grid-row:span 2}
+  .pk img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .pk:hover img{transform:scale(1.07)}
+  .pk::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(4,29,31,.92))}
+  .pk .stamp{top:16px;right:16px;transition:transform .4s}
+  .pk:hover .stamp{transform:rotate(-4deg) scale(1.06)}
+  .info{position:absolute;left:22px;right:22px;bottom:20px;z-index:2;color:#fff}
+  .info small{font:700 .66rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#9fe3b5}
+  .info h3{font-size:1.4rem;font-weight:800;line-height:1.2}
+  .big .info h3{font-size:2.1rem}
+  .info p{font-size:.84rem;color:rgba(255,255,255,.8)}
+  .ask{display:inline-flex;margin-top:10px;font-size:.8rem;font-weight:700;color:#fff;background:var(--orange);padding:7px 14px;border-radius:999px;opacity:0;transform:translateY(8px);transition:.3s}
+  .pk:hover .ask,.dest:hover .ask{opacity:1;transform:none}
+
+  /* Luggage tag banner */
+  .tag-banner{margin-top:18px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:32px 40px 32px 84px;color:#fff;background:linear-gradient(120deg,#0f5a3a,var(--teal-700));position:relative;cursor:pointer;
+    clip-path:polygon(34px 0,100% 0,100% 100%,34px 100%,0 calc(100% - 34px),0 34px);border-radius:0 18px 18px 0}
+  .tag-banner::before{content:"";position:absolute;left:30px;top:50%;width:20px;height:20px;border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 4px rgba(232,184,106,.8);transform:translateY(-50%)}
+  .tag-banner h3{font-size:1.45rem;font-weight:800;margin-bottom:4px}
+  .tag-banner p{font-size:.95rem;color:rgba(255,255,255,.8)}
+
+  /* INTERNATIONAL */
+  .intl .script{color:var(--orange);display:block}
+  .intl h2.title{margin-top:4px}
+  .dest-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:260px;gap:18px;margin-top:46px}
+  .dest{position:relative;border-radius:var(--radius);overflow:hidden;cursor:pointer;background:var(--teal-800)}
+  .dest.big{grid-column:span 2;grid-row:span 2}
+  .dest.wide{grid-column:span 2}
+  .dest.full{grid-column:1/-1}
+  .dest img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .dest:hover img{transform:scale(1.07)}
+  .dest::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,29,31,.35),transparent 30%,transparent 45%,rgba(4,29,31,.92))}
+  .iata{position:absolute;top:16px;left:20px;z-index:2;font:700 1.9rem/1 var(--mono);color:#fff;letter-spacing:.04em}
+  .big .iata{font-size:3rem}
+  .iata small{display:block;font-size:.6rem;letter-spacing:.2em;color:var(--gold-lt);margin-top:4px}
+  .dest .info small{color:var(--gold-lt)}
+
+  /* WHY */
+  .why{background:var(--ticket)}
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .why-item{padding-left:16px;border-left:2px dashed var(--line)}
+  .why-item .num{font:700 .72rem var(--mono);color:var(--orange);letter-spacing:.14em}
+  .why-item h4{font-size:1.06rem;font-weight:800;color:var(--teal-800);margin:4px 0}
+  .why-item p{color:var(--muted);font-size:.9rem}
+  .ceo{background:linear-gradient(135deg,var(--teal-900),var(--teal-700));color:#fff;border-radius:24px;padding:40px 36px;position:relative;overflow:hidden;margin-top:30px}
+  .ceo img{position:absolute;right:-40px;bottom:-40px;width:240px;opacity:.12}
+  .ceo q{display:block;font-size:1.2rem;font-weight:600;line-height:1.5;quotes:"\201C" "\201D";position:relative}
+  .ceo .who{margin-top:24px;position:relative}
+  .ceo .who b{display:block;font-size:1.1rem}
+  .ceo .who span{color:var(--gold);font:700 .78rem var(--mono);letter-spacing:.16em}
+
+  /* Flight path steps */
+  .flightpath{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:80px;position:relative}
+  .flightpath::before{content:"";position:absolute;left:28px;right:28px;top:27px;height:2px;background:repeating-linear-gradient(90deg,var(--teal-500) 0 8px,transparent 8px 16px)}
+  .fp{position:relative}
+  .fp .dot{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ticket);border:2px solid var(--teal-500);color:var(--teal-700);font:700 .9rem var(--mono);position:relative;z-index:1;margin-bottom:18px}
+  .fp:last-child .dot{background:var(--orange);border-color:var(--orange);color:#fff}
+  .fp:last-child .dot svg{width:24px;height:24px;transform:rotate(45deg)}
+  .fp small{font:700 .66rem var(--mono);letter-spacing:.2em;color:var(--orange)}
+  .fp h4{font-weight:800;color:var(--teal-800);margin:2px 0 6px}
+  .fp p{font-size:.9rem;color:var(--muted)}
+
+  /* CONTACT */
+  .contact{background:
+      radial-gradient(circle at 1px 1px,rgba(46,196,201,.12) 1px,transparent 1.5px) 0 0/22px 22px,
+      var(--teal-950);color:#fff}
+  .contact .title{color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;margin-top:40px;align-items:start}
+  form{background:var(--ticket);color:var(--ink);border-radius:20px;padding:0 32px 30px;display:grid;gap:16px;position:relative}
+  .form-band{display:flex;justify-content:space-between;align-items:center;margin:0 -32px 6px;padding:16px 32px;background:var(--orange);color:#fff;border-radius:20px 20px 0 0;font:700 .74rem var(--mono);letter-spacing:.2em;position:relative}
+  .form-band::before,.form-band::after{content:"";position:absolute;bottom:-12px;width:24px;height:24px;border-radius:50%;background:var(--teal-950)}
+  .form-band::before{left:-12px}.form-band::after{right:-12px}
+  form h3{font-size:1.3rem;font-weight:900;color:var(--teal-800)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  label{font:700 .62rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:grid;gap:6px}
+  input,select,textarea{font:500 .95rem 'Montserrat',sans-serif;letter-spacing:0;text-transform:none;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);width:100%}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal-500)}
+  textarea{resize:vertical;min-height:84px}
+  form .btn{justify-content:center;width:100%}
+  form .note{font-size:.76rem;color:var(--muted);text-align:center}
+  .info-list{display:grid;gap:14px}
+  .info-row{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.14);padding:18px 20px;border-radius:14px;transition:background .2s}
+  a.info-row:hover{background:rgba(255,255,255,.09)}
+  .info-row .ico{width:46px;height:46px;border-radius:12px;flex:none}
+  .info-row .ico svg{width:22px;height:22px}
+  .info-row small{display:block;font:700 .62rem var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt)}
+  .info-row b{font-size:1rem;font-weight:700;word-break:break-word}
+  .info-list > .btn{justify-content:center}
+
+  footer{background:#031517;color:rgba(255,255,255,.55);padding:34px 0;font-size:.84rem}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+  .foot .brand img{width:42px}
+
+  /* Floating WhatsApp */
+  .wa-float{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;background:#25d366;display:grid;place-items:center;box-shadow:0 12px 28px -6px rgba(37,211,102,.7)}
+  .wa-float svg{width:34px;height:34px;color:#fff}
+  .wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:ping 2s infinite}
+  @keyframes ping{to{transform:scale(1.6);opacity:0}}
+  .wa-float .tip{position:absolute;right:74px;background:#fff;color:var(--ink);font-size:.8rem;font-weight:700;padding:8px 14px;border-radius:10px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+  .bp.featured.reveal.in{transform:translateY(-14px)}
+  .tk.reveal.in:hover{transform:translateY(-6px) rotate(-.5deg)}
+  .bp.reveal.in:hover{transform:translateY(-6px)}
+  .bp.featured.reveal.in:hover{transform:translateY(-20px)}
+
+  @media (max-width:1060px){
+    .links{gap:18px}
+    .links a{font-size:.82rem}
+  }
+  @media (max-width:980px){
+    .hero-grid,.umrah-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+    .tickets{grid-template-columns:1fr 1fr}
+    .passes{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+    .bp.featured,.bp.featured.reveal.in{transform:none}
+    .pk-grid{grid-template-columns:1fr 1fr}
+    .dest-grid{grid-template-columns:1fr 1fr}
+    .flightpath{grid-template-columns:1fr 1fr;row-gap:40px}
+    .flightpath::before{display:none}
+    .umrah-pics{height:440px}
+  }
+  @media (max-width:760px){
+    section{padding:72px 0}
+    .links{position:fixed;top:78px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--teal-950);padding:10px 20px 24px;transform:translateY(-130%);transition:transform .35s;box-shadow:0 20px 30px rgba(0,0,0,.3)}
+    .links.open{transform:none}
+    .links a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.92rem}
+    .links .btn{margin-top:14px;justify-content:center;border:0}
+    .burger{display:block}
+    header{background:rgba(4,29,31,.96)}
+    .hero{padding-top:110px}
+    .tickets,.why-list,.row{grid-template-columns:1fr}
+    .pk-grid{grid-template-columns:1fr;grid-auto-rows:250px}
+    .pk.big{grid-row:auto}
+    .big .info h3{font-size:1.5rem}
+    .dest-grid{grid-template-columns:1fr;grid-auto-rows:230px}
+    .dest.big,.dest.wide,.dest.full{grid-column:auto;grid-row:auto}
+    .big .iata{font-size:1.9rem}
+    .ask{opacity:1;transform:none}
+    .umrah-pics{height:360px}
+    .umrah-pics .stamp{width:86px;height:86px}
+    .flightpath{grid-template-columns:1fr;row-gap:28px;padding-left:4px}
+    .flightpath::before{display:block;left:31px;right:auto;top:10px;bottom:10px;width:2px;height:auto;background:repeating-linear-gradient(180deg,var(--teal-500) 0 8px,transparent 8px 16px)}
+    .fp{display:grid;grid-template-columns:56px 1fr;column-gap:18px}
+    .fp .dot{margin:0;grid-row:span 3}
+    .tag-banner{padding:26px 24px 26px 72px}
+    .wa-float .tip{display:none}
+    form{padding:0 20px 24px}
+    .form-band{margin:0 -20px 6px;padding:14px 20px}
+  }
+  @media (max-width:560px){
+    .board{padding:16px 12px 12px}
+    .bcols,.brow{grid-template-columns:50px 166px 1fr;gap:8px}
+    .brow{font-size:12.5px}
+    .bcols span:nth-child(3),.bpkg{display:none}
+    .board-foot span:last-child{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.45-5.02c0-5.2 4.24-9.43 9.45-9.43a9.4 9.4 0 0 1 9.43 9.44c0 5.2-4.24 9.43-9.44 9.43m8.03-17.47A11.28 11.28 0 0 0 12.05.7C5.8.7.7 5.8.7 12.04c0 2 .52 3.95 1.52 5.66L.6 23.3l5.73-1.5a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.34-5.09 11.34-11.34 0-3.03-1.18-5.88-3.32-8.02"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></g></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></g></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></symbol>
+</svg>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <img src="img/logo-mark.png" alt="Yahya logo">
+      <span><b>YAHYA</b><small>Global Travel &amp; Tours</small></span>
+    </a>
+    <nav class="links" id="links">
+      <a href="#services">Services</a>
+      <a href="#umrah">Umrah</a>
+      <a href="#pakistan">Pakistan</a>
+      <a href="#destinations">International</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-orange" href="tel:+923487216560"><svg><use href="#i-phone"/></svg>0348 7216560</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <svg class="route" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path id="route1" d="M-60 760 C 260 560, 520 820, 820 560 S 1260 160, 1520 220" fill="none" stroke="rgba(232,184,106,.45)" stroke-width="2" stroke-dasharray="8 12"/>
+    <path d="M-60 300 C 240 240, 480 420, 760 330 S 1200 90, 1520 60" fill="none" stroke="rgba(46,196,201,.3)" stroke-width="1.5" stroke-dasharray="4 10"/>
+    <g fill="#e8b86a">
+      <path d="M12 0 2 -3 -2 -12 -6 -12 -3 -3 -12 -3 -15 -7 -18 -7 -16 0 -18 7 -15 7 -12 3 -3 3 -6 12 -2 12 2 3 12 0Z" transform="scale(1.3)"/>
+      <animateMotion dur="18s" repeatCount="indefinite" rotate="auto"><mpath href="#route1"/></animateMotion>
+    </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="sign"><b>SKT</b>Sialkot, Pakistan</span>
+      <p class="script">Travel Today, A Better Tomorrow</p>
+      <h1><span>YAHYA</span>Global Travel and Tours</h1>
+      <div class="tag">Your Journey &middot; Our Priority</div>
+      <p class="sub">Airline tickets, Umrah packages, visit visas, hotel booking, Pakistan aur international tours. Ek call ya WhatsApp par poori planning, aapke budget ke mutabiq.</p>
+      <div class="ctas">
+        <a class="btn btn-orange" href="https://wa.me/923487216560?text=Assalam%20o%20Alaikum%2C%20mujhe%20travel%20ke%20baare%20me%20maloomat%20chahiye." target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp par baat karein</a>
+        <a class="btn btn-ghost" href="#services">Hamari services</a>
+      </div>
+    </div>
+    <div class="board" aria-label="Destinations board">
+      <div class="board-head"><span>&#9992; DEPARTURES</span><span class="clock" id="clock">PKT</span></div>
+      <div class="bcols"><span>Code</span><span>Destination</span><span>Package</span><span>Status</span></div>
+      <div id="rows"></div>
+      <div class="board-foot"><span>Row par click karein, WhatsApp par details</span><span>YAHYA / SKT</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>Airline Ticket</span><span>Flight Booking</span><span>Visit Visa Consultancy</span><span>Motel Reservation</span><span>Transportation Services</span><span>Travel Insurance</span><span>Travel Guide</span><span>Holiday Packages</span><span>Umrah Packages</span><span>Explore Pakistan</span>
+  <span>Airline Ticket</span><span>Flight Booking</span><span>Visit Visa Consultancy</span><span>Motel Reservation</span><span>Transportation Services</span><span>Travel Insurance</span><span>Travel Guide</span><span>Holiday Packages</span><span>Umrah Packages</span><span>Explore Pakistan</span>
+</div></div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div>
+        <span class="sign"><b>A1</b>Services</span>
+        <h2 class="title">Safar ki har zaroorat,<br>ek hi counter par</h2>
+      </div>
+      <p class="lead">Ticket se le kar hotel tak, visa se le kar ziyarat tak. Aap destination batayein, baqi kaam hamara.</p>
+    </div>
+    <div class="tickets">
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 0 0 6v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3a2 2 0 0 0 0-6V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1z"/><path d="M14 5v2M14 11v2M14 17v2"/></svg></div><div class="tk-code">SERVICE<b>TKT</b></div></div>
+          <h3>Airline Ticket</h3>
+          <p>Domestic aur international tickets, sab bari airlines ke. Behtareen fares aur fori issuance.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>01</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><div class="tk-code">SERVICE<b>FLT</b></div></div>
+          <h3>Flight Booking</h3>
+          <p>Seat reservation, group booking, date change aur return flights. Aapki dates par best option.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>02</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17h8"/></svg></div><div class="tk-code">SERVICE<b>VSA</b></div></div>
+          <h3>Visit Visa Consultancy</h3>
+          <p>Dubai, Saudi Arabia, Turkey, Malaysia aur mazeed mulkon ke visit visa. Documents ki poori rehnumai.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>03</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21V7l9-4 9 4v14"/><path d="M9 21v-6h6v6M8 10h.01M12 10h.01M16 10h.01"/></svg></div><div class="tk-code">SERVICE<b>HTL</b></div></div>
+          <h3>Motel Reservation</h3>
+          <p>Pakistan aur bahar, budget motels se luxury hotels tak. Haram ke qareeb hotels ki khaas booking.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>04</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="15" rx="3"/><path d="M4 11h16M8 21v-3M16 21v-3"/><circle cx="8" cy="14.5" r=".6" fill="currentColor"/><circle cx="16" cy="14.5" r=".6" fill="currentColor"/></svg></div><div class="tk-code">SERVICE<b>TRN</b></div></div>
+          <h3>Transportation Services</h3>
+          <p>Airport pick and drop, car, Hiace aur coaster rent. Tour ke liye driver ke saath gari.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>05</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="tk-code">SERVICE<b>INS</b></div></div>
+          <h3>Travel Insurance</h3>
+          <p>Visa ke liye zaroori travel insurance aur safar me befikri, munasib qeemat par.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>06</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="6" r="3"/><path d="M4 21v-2a6 6 0 0 1 12 0v2"/><path d="M18 3v8M18 3l3 1.5L18 6"/></svg></div><div class="tk-code">SERVICE<b>GDE</b></div></div>
+          <h3>Travel Guide</h3>
+          <p>Tajurba kaar guide jo raste, ziyarat aur sightseeing me aapke saath rahe. Koi pareshani nahi.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>07</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></div><div class="tk-code">SERVICE<b>HOL</b></div></div>
+          <h3>Holiday Packages</h3>
+          <p>Family aur honeymoon packages, Pakistan aur international. Hotel, transport, sightseeing sab shamil.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>08</b><i class="barcode"></i></div>
+      </div></div>
+      <div class="tk reveal"><div class="tk-in">
+        <div class="tk-main">
+          <div class="tk-top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 9 12 5l8 4v10H4z"/><path d="M4 9h16M9 19v-5h6v5"/></svg></div><div class="tk-code">SERVICE<b>UMR</b></div></div>
+          <h3>Umrah Packages</h3>
+          <p>Economy se premium tak. Visa, ticket, Makkah aur Madinah hotels, aur transport sab shamil.</p>
+        </div>
+        <div class="tk-stub"><small>GATE</small><b>09</b><i class="barcode"></i></div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="umrah" id="umrah">
+  <div class="wrap umrah-grid">
+    <div class="reveal">
+      <span class="sign"><b>JED</b>Umrah Packages</span>
+      <h2 class="title">Allah ke ghar ka safar,<br>poore sukoon ke saath</h2>
+      <p class="lead">Aap ibadat par dhyaan dein. Visa, flight, hotel aur transport ki fikr hum par chhor dein.</p>
+      <ul class="checks">
+        <li><svg><use href="#i-check"/></svg>Umrah visa processing</li>
+        <li><svg><use href="#i-check"/></svg>Return air ticket, direct aur connecting flights</li>
+        <li><svg><use href="#i-check"/></svg>Makkah aur Madinah me Haram ke qareeb hotels</li>
+        <li><svg><use href="#i-check"/></svg>Airport, Makkah aur Madinah transport</li>
+        <li><svg><use href="#i-check"/></svg>Family aur group packages</li>
+      </ul>
+      <a class="btn btn-orange" data-pkg="Umrah" href="#"><svg><use href="#i-wa"/></svg>Umrah package poochein</a>
+    </div>
+    <div class="umrah-pics reveal">
+      <img class="p1" src="img/kaaba.jpg" alt="Khana Kaaba, Makkah" loading="lazy">
+      <figure class="p2"><img src="img/madinah.jpg" alt="Masjid an-Nabawi, Madinah" loading="lazy"><figcaption>Madinah Munawwarah</figcaption></figure>
+      <span class="stamp">Labbaik<b>MAKKAH</b>&#9733; &#9733; &#9733;</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pkg-head reveal">
+      <h3>Umrah Boarding Passes</h3>
+      <div class="chips"><span>15 DIN</span><span>21 DIN</span><span>28 DIN</span><span>RAMADAN UMRAH</span></div>
+    </div>
+    <div class="passes">
+      <div class="bp reveal">
+        <div class="bp-head"><span>BOARDING PASS</span><span>ECONOMY</span></div>
+        <div class="bp-route"><div><b>PAK</b><small>Pakistan</small></div><div class="line"><svg><use href="#i-plane"/></svg></div><div><b>JED</b><small>Jeddah</small></div></div>
+        <h4>Economy Umrah</h4>
+        <div class="bp-fields"><div><small>Class</small><b>Budget</b></div><div><small>Hotel</small><b>Shuttle</b></div><div><small>Transport</small><b>Sharing</b></div></div>
+        <div class="bp-cut"></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Umrah visa</li>
+          <li><svg><use href="#i-check"/></svg>Return air ticket</li>
+          <li><svg><use href="#i-check"/></svg>Economy hotels, Haram shuttle</li>
+          <li><svg><use href="#i-check"/></svg>Sharing transport</li>
+        </ul>
+        <div class="bp-foot"><i class="barcode"></i><a class="btn btn-ink" data-pkg="Economy Umrah" href="#"><svg><use href="#i-wa"/></svg>Rate poochein</a></div>
+      </div>
+      <div class="bp featured reveal">
+        <div class="bp-head"><span>BOARDING PASS</span><span>&#9733; FAMILY</span></div>
+        <div class="bp-route"><div><b>PAK</b><small>Pakistan</small></div><div class="line"><svg><use href="#i-plane"/></svg></div><div><b>JED</b><small>Jeddah</small></div></div>
+        <h4>Family Umrah</h4>
+        <div class="bp-fields"><div><small>Class</small><b>3 Star</b></div><div><small>Hotel</small><b>Near Haram</b></div><div><small>Transport</small><b>Private</b></div></div>
+        <div class="bp-cut"></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Umrah visa, poori family</li>
+          <li><svg><use href="#i-check"/></svg>Return air ticket</li>
+          <li><svg><use href="#i-check"/></svg>3 star hotels, Haram ke qareeb</li>
+          <li><svg><use href="#i-check"/></svg>Private transport aur ziyarat</li>
+        </ul>
+        <div class="bp-foot"><i class="barcode"></i><a class="btn btn-orange" data-pkg="Family Umrah" href="#"><svg><use href="#i-wa"/></svg>Rate poochein</a></div>
+      </div>
+      <div class="bp reveal">
+        <div class="bp-head"><span>BOARDING PASS</span><span>PREMIUM</span></div>
+        <div class="bp-route"><div><b>PAK</b><small>Pakistan</small></div><div class="line"><svg><use href="#i-plane"/></svg></div><div><b>JED</b><small>Jeddah</small></div></div>
+        <h4>Premium Umrah</h4>
+        <div class="bp-fields"><div><small>Class</small><b>5 Star</b></div><div><small>Hotel</small><b>Haram View</b></div><div><small>Transport</small><b>Private Car</b></div></div>
+        <div class="bp-cut"></div>
+        <ul>
+          <li><svg><use href="#i-check"/></svg>Umrah visa</li>
+          <li><svg><use href="#i-check"/></svg>Direct flight</li>
+          <li><svg><use href="#i-check"/></svg>5 star hotels, Haram ke bilkul saath</li>
+          <li><svg><use href="#i-check"/></svg>Private car, ziyarat aur guide</li>
+        </ul>
+        <div class="bp-foot"><i class="barcode"></i><a class="btn btn-ink" data-pkg="Premium Umrah" href="#"><svg><use href="#i-wa"/></svg>Rate poochein</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pakistan" id="pakistan">
+  <div class="wrap">
+    <div class="head-row reveal">
+      <div>
+        <span class="sign"><b>PK</b>Explore Pakistan</span>
+        <h2 class="title">Apna Pakistan dekhein</h2>
+      </div>
+      <p class="lead">Northern areas ke pahar, jheelein aur Lahore ki tareekh. Family, friends aur honeymoon tours, transport aur hotel ke saath.</p>
+    </div>
+    <div class="pk-grid">
+      <a class="pk big reveal" data-dest="Hunza Valley tour" href="#"><img src="img/pk-hunza.jpg" alt="Hunza Valley ke pahar" loading="lazy"><span class="stamp">Pakistan<b>HUNZA</b>&#9733; GB &#9733;</span><div class="info"><small>Gilgit-Baltistan</small><h3>Hunza Valley</h3><p>Karimabad, Altit Fort, Attabad Lake</p><span class="ask">Tour poochein</span></div></a>
+      <a class="pk reveal" data-dest="Skardu tour" href="#"><img src="img/pk-skardu.jpg" alt="Skardu, Katpana desert" loading="lazy"><span class="stamp">Pakistan<b>SKARDU</b>&#9733; GB &#9733;</span><div class="info"><small>Gilgit-Baltistan</small><h3>Skardu</h3><p>Shangrila, Katpana Desert, Deosai</p><span class="ask">Tour poochein</span></div></a>
+      <a class="pk reveal" data-dest="Passu / Khunjerab tour" href="#"><img src="img/pk-passu.jpg" alt="Passu, Upper Hunza" loading="lazy"><span class="stamp">Pakistan<b>PASSU</b>&#9733; GB &#9733;</span><div class="info"><small>Upper Hunza</small><h3>Passu &amp; Khunjerab</h3><p>Passu Cones, Khunjerab Pass</p><span class="ask">Tour poochein</span></div></a>
+      <a class="pk reveal" data-dest="Swat / Kalam tour" href="#"><img src="img/pk-swat.jpg" alt="Swat River, Bahrain" loading="lazy"><span class="stamp">Pakistan<b>SWAT</b>&#9733; KP &#9733;</span><div class="info"><small>Khyber Pakhtunkhwa</small><h3>Swat &amp; Kalam</h3><p>Bahrain, Kalam, Malam Jabba</p><span class="ask">Tour poochein</span></div></a>
+      <a class="pk reveal" data-dest="Lahore tour" href="#"><img src="img/pk-lahore.jpg" alt="Badshahi Masjid, Lahore" loading="lazy"><span class="stamp">Pakistan<b>LAHORE</b>&#9733; PB &#9733;</span><div class="info"><small>Punjab</small><h3>Lahore</h3><p>Badshahi Masjid, Shahi Qila, Food Street</p><span class="ask">Tour poochein</span></div></a>
+    </div>
+    <a class="tag-banner reveal" data-dest="Naran Kaghan / Murree / Neelum ya koi aur Pakistan tour" href="#">
+      <div>
+        <h3>Naran, Murree, Neelum?</h3>
+        <p>Jahan bhi jaana ho, hum aapka custom tour plan kar denge. Dates aur log batayein.</p>
+      </div>
+      <span class="btn btn-orange"><svg><use href="#i-wa"/></svg>Custom tour plan karein</span>
+    </a>
+  </div>
+</section>
+
+<section class="intl" id="destinations">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sign"><b>INTL</b>International</span>
+      <span class="script" style="margin-top:18px">Explore the World</span>
+      <h2 class="title">with confidence</h2>
+      <p class="lead">Kisi bhi destination par click karein aur WhatsApp par package ki details mangwa lein.</p>
+    </div>
+    <div class="dest-grid">
+      <a class="dest big reveal" data-dest="Dubai" href="#"><img src="img/dubai.jpg" alt="Dubai skyline" loading="lazy"><span class="iata">DXB<small>DUBAI &middot; UAE</small></span><div class="info"><small>UAE</small><h3>Dubai</h3><span class="ask">Package poochein</span></div></a>
+      <a class="dest reveal" data-dest="Istanbul, Turkey" href="#"><img src="img/istanbul.jpg" alt="Blue Mosque, Istanbul" loading="lazy"><span class="iata">IST<small>TURKEY</small></span><div class="info"><h3>Istanbul</h3><span class="ask">Package poochein</span></div></a>
+      <a class="dest reveal" data-dest="Kuala Lumpur, Malaysia" href="#"><img src="img/malaysia.jpg" alt="Kuala Lumpur skyline" loading="lazy"><span class="iata">KUL<small>MALAYSIA</small></span><div class="info"><h3>Kuala Lumpur</h3><span class="ask">Package poochein</span></div></a>
+      <a class="dest wide reveal" data-dest="Paris / Europe" href="#"><img src="img/paris.jpg" alt="Eiffel Tower, Paris" loading="lazy"><span class="iata">CDG<small>PARIS &middot; EUROPE</small></span><div class="info"><h3>Paris</h3><span class="ask">Package poochein</span></div></a>
+      <a class="dest full reveal" data-dest="Turkey tour" href="#"><img src="img/galata.jpg" alt="Galata Tower, Istanbul" loading="lazy"><span class="iata">IST<small>GALATA &middot; OLD CITY</small></span><div class="info"><h3>Turkey Tour</h3><span class="ask">Package poochein</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="about">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <span class="sign"><b>B2</b>Why Yahya</span>
+      <h2 class="title">Bharosa, jo har safar ke saath chalta hai</h2>
+      <p class="lead">Yahya Global Travel and Tours (Private) Limited ek registered company hai jo Sialkot se musafiron ki khidmat karti hai.</p>
+      <div class="ceo">
+        <img src="img/logo-mark.png" alt="">
+        <q>Hamara maqsad simple hai: har musafir ko sahi rate, saaf baat aur safar ke har qadam par saath.</q>
+        <div class="who"><b>Muhammad Husnain</b><span>CEO</span></div>
+      </div>
+    </div>
+    <div class="why-list">
+      <div class="why-item reveal"><div class="num">SEAT 1A</div><h4>Munasib rates</h4><p>Har budget ke liye options. Koi chhupi hui fees nahi.</p></div>
+      <div class="why-item reveal"><div class="num">SEAT 1B</div><h4>Registered company</h4><p>(Private) Limited company, pakki receipt aur zimmedari.</p></div>
+      <div class="why-item reveal"><div class="num">SEAT 1C</div><h4>Personal rehnumai</h4><p>Documents se le kar wapsi tak, har sawal ka jawab ek call par.</p></div>
+      <div class="why-item reveal"><div class="num">SEAT 2A</div><h4>Fori jawab</h4><p>WhatsApp par seedha rabta. Quote jaldi, booking jaldi.</p></div>
+      <div class="why-item reveal"><div class="num">SEAT 2B</div><h4>Custom packages</h4><p>Aapki dates, aapke log, aapki pasand ka itinerary.</p></div>
+      <div class="why-item reveal"><div class="num">SEAT 2C</div><h4>Local office</h4><p>Kotli Bawa Faqir Chand me office, aamne saamne mulaqat ki sahoolat.</p></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="flightpath">
+      <div class="fp reveal"><div class="dot">01</div><small>CHECK-IN</small><h4>Rabta karein</h4><p>Call ya WhatsApp par apni destination aur dates batayein.</p></div>
+      <div class="fp reveal"><div class="dot">02</div><small>SECURITY</small><h4>Quote hasil karein</h4><p>Hum aapke budget ke mutabiq best options bhejenge.</p></div>
+      <div class="fp reveal"><div class="dot">03</div><small>BOARDING</small><h4>Booking confirm</h4><p>Documents jama karwayein, hum visa aur booking karwa denge.</p></div>
+      <div class="fp reveal"><div class="dot"><svg><use href="#i-plane"/></svg></div><small>TAKE OFF</small><h4>Safar shuru</h4><p>Tickets aur vouchers haath me, aap safar ke liye tayyar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="sign"><b>C3</b>Contact</span>
+      <h2 class="title">Apna safar aaj plan karein</h2>
+      <p class="lead" style="color:rgba(255,255,255,.7)">Form bharein, message seedha hamare WhatsApp par aa jayega.</p>
+    </div>
+    <div class="contact-grid">
+      <form id="inquiry" class="reveal">
+        <div class="form-band"><span>BOARDING PASS REQUEST</span><span>&#9992; YAHYA</span></div>
+        <h3>Travel Inquiry</h3>
+        <div class="row">
+          <label>Passenger naam<input name="name" required placeholder="Aapka naam"></label>
+          <label>Phone<input name="phone" type="tel" required placeholder="03xx xxxxxxx"></label>
+        </div>
+        <div class="row">
+          <label>Service
+            <select name="service">
+              <option>Umrah Package</option>
+              <option>Airline Ticket</option>
+              <option>Flight Booking</option>
+              <option>Visit Visa Consultancy</option>
+              <option>Explore Pakistan Tour</option>
+              <option>Holiday Package</option>
+              <option>Motel Reservation</option>
+              <option>Transportation</option>
+              <option>Travel Insurance</option>
+              <option>Travel Guide</option>
+            </select>
+          </label>
+          <label>Passengers<input name="people" type="number" min="1" value="1"></label>
+        </div>
+        <div class="row">
+          <label>Destination<input name="dest" placeholder="Maslan: Dubai"></label>
+          <label>Travel date<input name="date" type="date"></label>
+        </div>
+        <label>Message<textarea name="msg" placeholder="Koi aur detail..."></textarea></label>
+        <button class="btn btn-wa" type="submit"><svg><use href="#i-wa"/></svg>WhatsApp par bhejein</button>
+        <p class="note">Submit karne par WhatsApp khulega, aapki details pehle se likhi hongi.</p>
+      </form>
+      <div class="info-list reveal">
+        <a class="info-row" href="tel:+923487216560"><div class="ico"><svg><use href="#i-phone"/></svg></div><div><small>Call</small><b>0348 7216560</b></div></a>
+        <a class="info-row" href="https://wa.me/923487216560" target="_blank" rel="noopener"><div class="ico" style="background:#25d366"><svg><use href="#i-wa"/></svg></div><div><small>WhatsApp</small><b>+92 348 7216560</b></div></a>
+        <a class="info-row" href="mailto:yahya.globaltravels60@gmail.com"><div class="ico"><svg><use href="#i-mail"/></svg></div><div><small>Email</small><b>yahya.globaltravels60@gmail.com</b></div></a>
+        <div class="info-row"><div class="ico"><svg><use href="#i-pin"/></svg></div><div><small>Office</small><b>Shop No 02, Kotli Bawa Faqir Chand, near PSO Petrol Pump, Tehsil Pasrur, District Sialkot</b></div></div>
+        <a class="btn btn-orange" href="https://www.google.com/maps/search/?api=1&query=Kotli+Bawa+Faqir+Chand,+Pasrur,+Sialkot" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Google Maps par dekhein</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker dark" aria-hidden="true"><div class="ticker-track">
+  <span>Safe Travels</span><span>Happy Journeys</span><span>Global Destinations</span><span>Your Journey, Our Priority</span><span>Explore the World with Confidence</span>
+  <span>Safe Travels</span><span>Happy Journeys</span><span>Global Destinations</span><span>Your Journey, Our Priority</span><span>Explore the World with Confidence</span>
+</div></div>
+<footer>
+  <div class="wrap foot">
+    <a href="#home" class="brand"><img src="img/logo-mark.png" alt=""><span><b>YAHYA</b><small>Global Travel &amp; Tours (Pvt) Ltd</small></span></a>
+    <span>&copy; <span id="yr"></span> Yahya Global Travel and Tours (Private) Limited. All rights reserved.</span>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923487216560?text=Assalam%20o%20Alaikum%2C%20mujhe%20travel%20ke%20baare%20me%20maloomat%20chahiye." target="_blank" rel="noopener" aria-label="WhatsApp par rabta karein">
+  <span class="tip">WhatsApp par poochein</span>
+  <svg><use href="#i-wa"/></svg>
+</a>
+
+<script>
+  const WA = '923487216560';
+  const openWA = msg => window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const header = document.getElementById('top');
+  const onScroll = () => header.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll); onScroll();
+
+  const links = document.getElementById('links');
+  document.getElementById('burger').onclick = () => links.classList.toggle('open');
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Departures board: split-flap rows that cycle through destinations
+  const FLIGHTS = [
+    ['JED', 'JEDDAH', 'UMRAH', 'Umrah'],
+    ['DXB', 'DUBAI', 'VISA + TOUR', 'Dubai'],
+    ['KDU', 'SKARDU', 'PAKISTAN', 'Skardu tour'],
+    ['IST', 'ISTANBUL', 'HOLIDAY', 'Istanbul, Turkey'],
+    ['MED', 'MADINAH', 'UMRAH', 'Umrah (Madinah)'],
+    ['KUL', 'K.LUMPUR', 'HOLIDAY', 'Kuala Lumpur, Malaysia'],
+    ['GIL', 'HUNZA', 'PAKISTAN', 'Hunza tour'],
+    ['CDG', 'PARIS', 'EUROPE', 'Paris / Europe'],
+    ['LHE', 'LAHORE', 'PAKISTAN', 'Lahore tour']
+  ];
+  const ROWS = 5, CITY_LEN = 10, CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ.';
+  const rowsEl = document.getElementById('rows');
+  const makeCells = (n, cls) => {
+    const w = document.createElement('span'); w.className = 'flaps ' + cls;
+    for (let i = 0; i < n; i++) { const c = document.createElement('span'); c.className = 'f'; w.appendChild(c); }
+    return w;
+  };
+  const flipTo = (wrap, text) => {
+    const cells = wrap.children, t = text.padEnd(cells.length, ' ');
+    [...cells].forEach((c, i) => {
+      if (c.textContent === t[i]) return;
+      if (reduced) { c.textContent = t[i]; return; }
+      let n = 3 + Math.floor(Math.random() * 5);
+      const step = () => {
+        c.classList.remove('flip'); void c.offsetWidth; c.classList.add('flip');
+        c.textContent = n-- > 0 ? CHARS[Math.floor(Math.random() * CHARS.length)] : t[i];
+        if (n >= 0) setTimeout(step, 70);
+      };
+      setTimeout(step, i * 30);
+    });
+  };
+  const rows = [];
+  for (let r = 0; r < ROWS; r++) {
+    const a = document.createElement('a'); a.className = 'brow'; a.href = '#';
+    const code = makeCells(3, 'code'), city = makeCells(CITY_LEN, 'city');
+    const pkg = document.createElement('span'); pkg.className = 'bpkg';
+    const st = document.createElement('span'); st.className = 'bst'; st.innerHTML = '<i></i>OPEN';
+    a.append(code, city, pkg, st); rowsEl.appendChild(a);
+    const row = { a, code, city, pkg, idx: r };
+    a.addEventListener('click', e => { e.preventDefault(); openWA(`Assalam o Alaikum, mujhe ${FLIGHTS[row.idx][3]} ke package ki details chahiye.`); });
+    rows.push(row);
+  }
+  const setRow = (row, idx) => {
+    row.idx = idx; const [c, city, pkg] = FLIGHTS[idx];
+    flipTo(row.code, c); flipTo(row.city, city); row.pkg.textContent = pkg;
+  };
+  rows.forEach((row, i) => setRow(row, i));
+  let next = ROWS, turn = 0;
+  if (!reduced) setInterval(() => { setRow(rows[turn], next); next = (next + 1) % FLIGHTS.length; turn = (turn + 1) % ROWS; }, 2600);
+
+  const clock = document.getElementById('clock');
+  const tickClock = () => {
+    try { clock.textContent = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Karachi' }).format(new Date()) + ' PKT'; } catch (e) {}
+  };
+  tickClock(); setInterval(tickClock, 30000);
+
+  document.querySelectorAll('.dest, .pk, .tag-banner').forEach(d => d.addEventListener('click', e => {
+    e.preventDefault();
+    openWA(`Assalam o Alaikum, mujhe ${d.dataset.dest} ke package ki details chahiye.`);
+  }));
+
+  document.querySelectorAll('[data-pkg]').forEach(b => b.addEventListener('click', e => {
+    e.preventDefault();
+    openWA(`Assalam o Alaikum, mujhe ${b.dataset.pkg} package ka rate aur details chahiye.`);
+  }));
+
+  document.getElementById('inquiry').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const lines = [
+      'Assalam o Alaikum, Yahya Travels.',
+      `Naam: ${f.get('name')}`,
+      `Phone: ${f.get('phone')}`,
+      `Service: ${f.get('service')}`,
+      f.get('dest') && `Destination: ${f.get('dest')}`,
+      `Log: ${f.get('people')}`,
+      f.get('date') && `Date: ${f.get('date')}`,
+      f.get('msg') && `Message: ${f.get('msg')}`
+    ].filter(Boolean);
+    openWA(lines.join('\n'));
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
